@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h3 id="how-does-ethereum-virtual-machine-working">How Does Ethereum Virtual Machine Working</h3>
 <hr>
 <ul>
@@ -72,7 +77,7 @@ contract simple {
 10|3e 0x3e
 11|57 JUMPI ---&gt; jump to 0x3e
 12|63 PUSH4 &lt;------------------------------------------------------|
-13|ffffffff 0xFFFFFFFF                                             |---&gt; function filter out
+13|ffffffff 0xFFFFFFFF                                             |---&gt; check the function name exist
 17|7c PUSH29                                                       |
 46|0100000000000000000000000000000000000000000000000000000000      |
 47|60 PUSH1                                                        |
@@ -127,7 +132,7 @@ contract simple {
 99|20 0x20                                                      |
 100|01 ADD                                                      |
 101|90 SWAP1                                                    |
-102|f3 RETURN --------------------------------------------------|
+102|f3 RETURN &lt;-------------------------------------------------|
 103|5b JUMPDEST
 104|60 PUSH1
 105|00 0x0
