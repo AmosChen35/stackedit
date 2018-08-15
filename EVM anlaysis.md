@@ -10,13 +10,11 @@
 </ul>
 <p>In the following of description, I’d like to analyse simple Solidity contracts in order to understand how it work as EVM bytecode.</p>
 <pre><code>pragma solidity ^0.4.11;
-
-contract simple {  
+contract simple {
     uint256 public a;
-    
-    function simple() {  
-      a = 1;  
-    }  
+    function simple() {
+      a = 1;
+    }
 }
 </code></pre>
 <p>Assemble and binary result of compiling contract with <code>solc</code></p>
