@@ -1,8 +1,3 @@
----
-
-
----
-
 <h3 id="how-does-ethereum-virtual-machine-working">How Does Ethereum Virtual Machine Working</h3>
 <hr>
 <ul>
