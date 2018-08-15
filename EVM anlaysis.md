@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h3 id="how-does-ethereum-virtual-machine-working">How Does Ethereum Virtual Machine Working</h3>
 <hr>
 <ul>
@@ -6,7 +11,6 @@
 <p>In the following of description, I’d like to analyse simple Solidity contracts in order to understand how it work as EVM bytecode.</p>
 <pre><code>pragma solidity ^0.4.11;
 
-```
 contract simple {  
     uint256 public a;
     
@@ -14,7 +18,6 @@ contract simple {
       a = 1;  
     }  
 }
-```
 
 </code></pre>
 <p>Assemble and binary result of compiling contract with <code>solc</code></p>
@@ -25,7 +28,7 @@ contract simple {
 03|40   0x40
 04|52   MSTORE
 05|34   CALLVALUE &lt;----------|
-06|80   DUP1	             |---&gt; Check transaction value, if that isn't zero then revert it.
+06|80   DUP1				 |---&gt; Check transaction value, if that isn't zero then revert it.
 07|15   ISZERO &lt;-------------|
 08|60   PUSH1
 09|0f   0xF
@@ -165,5 +168,5 @@ contract simple {
 </code></pre>
 <h3 id="where-is-the-smart-contract-">Where is the Smart Contract ?</h3>
 <hr>
-<p><img src="https://lh3.googleusercontent.com/pWIiV8sw7os9jIMPxkrGfyY7w84Lq2KyKOISYNCckEDJ0u823rh4JVPnNthw02677T3tMsrQimVL" alt="enter image description here"></p>
+<p><img src="https://lh3.googleusercontent.com/pWIiV8sw7os9jIMPxkrGfyY7w84Lq2KyKOISYNCckEDJ0u823rh4JVPnNthw02677T3tMsrQimVL=s1024" alt="enter image description here"></p>
 
