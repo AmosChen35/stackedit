@@ -18,7 +18,6 @@ contract simple {
       a = 1;  
     }  
 }
-
 </code></pre>
 <p>Assemble and binary result of compiling contract with <code>solc</code></p>
 <pre><code>#Initalate
@@ -28,7 +27,7 @@ contract simple {
 03|40   0x40
 04|52   MSTORE
 05|34   CALLVALUE &lt;----------|
-06|80   DUP1				 |---&gt; Check transaction value, if that isn't zero then revert it.
+06|80   DUP1                 |---&gt; Check transaction value, if that isn't zero then revert it.
 07|15   ISZERO &lt;-------------|
 08|60   PUSH1
 09|0f   0xF
