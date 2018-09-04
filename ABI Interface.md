@@ -282,6 +282,9 @@
 </ul>
 <h3 id="example-contract-abi-of-contract-trade-buy">Example contract abi of contract trade (Buy)</h3>
 <ul>
+<li>example signature :<pre><code>0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac80388256084f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada1c
+</code></pre>
+</li>
 <li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
 <ul>
 <li><code>0a19b14a</code> the Method ID.</li>
@@ -293,8 +296,8 @@
 <li><code>0x0000000000000000000000000000000000000000000000000000000000000001</code> (nonce padding to 32 bytes</li>
 <li><code>0x00000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c</code> (address of the user who placed the order padding to 32 bytes)</li>
 <li><code>0x0000000000000000000000000000000000000000000000000000000000000028</code> (chain id)</li>
-<li><code>0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac8038825608</code> (signed left hash)</li>
-<li><code>0x4f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada</code> (signed right hash)</li>
+<li><code>0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac8038825608</code> (part of signature)</li>
+<li><code>0x4f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada</code> (part of signature)</li>
 <li><code>0x0000000000000000000000000000000000000000000000000000000000100000</code> (will be buy)</li>
 </ul>
 </li>
