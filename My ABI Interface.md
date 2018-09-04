@@ -224,17 +224,17 @@
 </thead>
 <tbody>
 <tr>
-<td>trade(address,uint256…</td>
+<td>trade(address,uint256…)</td>
 <td>0a19b14a</td>
 <td>Facilitates a trade from one user to another. Requires that the transaction is signed properly, the trade isn’t past its expiration, and all funds are present to fill the trade.</td>
 </tr>
 <tr>
-<td>order(address,uint256…</td>
+<td>order(address,uint256…)</td>
 <td>0b927666</td>
 <td>Store activate order inside of the contract.</td>
 </tr>
 <tr>
-<td>cancelOrder(address,uint256…</td>
+<td>cancelOrder(address,uint256…)</td>
 <td>278b8c0e</td>
 <td>This function cancels a given order by editing its fill data to the full amount. Requires that the transaction is signed properly.</td>
 </tr>
@@ -320,5 +320,37 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-parse">Contract Parse</h2>
+<h2 id="contract-amount-watch">Contract Amount Watch</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>balanceOf(address,address)</td>
+<td>f7888aec</td>
+<td>Retrieves the balance of a token based on a user address and token address.</td>
+</tr>
+<tr>
+<td>availableVolume(address,uint256…)</td>
+<td>fb6e155f</td>
+<td>This function checks the available volume for a given order.</td>
+</tr>
+<tr>
+<td>amountFilled(address,uint256…)</td>
+<td>2d804ca2</td>
+<td>This function checks the amount of an order that has already been filled.</td>
+</tr>
+</tbody>
+</table><h3 id="command-detail-5">Command Detail</h3>
+<ul>
+<li>balanceOf(address token, address user)</li>
+<li>availableVolume(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s)</li>
+<li>amountFilled(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s)</li>
+</ul>
 
