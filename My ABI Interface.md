@@ -320,7 +320,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-amount-watch">Contract Amount Watch</h2>
+<h2 id="contract-amount">Contract Amount</h2>
 
 <table>
 <thead>
