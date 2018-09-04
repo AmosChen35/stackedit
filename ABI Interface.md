@@ -35,7 +35,14 @@
 <td>Changes the fee on takes. Can only be changed to a value less than it is currently set at.</td>
 </tr>
 </tbody>
-</table><h3 id="example-contract-abi-of--contract-management">Example contract abi of  contract management</h3>
+</table><h3 id="command-detail">Command Detail</h3>
+<ul>
+<li>changeAdmin(address admin_)</li>
+<li>changeFeeAccount(address feeAccount_)</li>
+<li>changeFreeUntilDate(uint256 freeUntilDate_)</li>
+<li>changeFeeTake(uint256 feeTake_)</li>
+</ul>
+<h3 id="example-contract-abi-of--contract-management">Example contract abi of  contract management</h3>
 <ul>
 <li>changeAdmin(address):
 <ul>
@@ -73,7 +80,12 @@
 <td>This function handles deposits of Ethereum based tokens to the contract. Does not allow Ether. If token transfer fails, transaction is reverted and remaining gas is refunded.</td>
 </tr>
 </tbody>
-</table><h3 id="example-contract-abi-of-contract-deposit">Example contract abi of contract deposit</h3>
+</table><h3 id="command-detail-1">Command Detail</h3>
+<ul>
+<li>deposit()</li>
+<li>depositToken(address token, uint256 amount)</li>
+</ul>
+<h3 id="example-contract-abi-of-contract-deposit">Example contract abi of contract deposit</h3>
 <ul>
 <li>depositToken(address,uint256):
 <ul>
@@ -113,7 +125,12 @@
 <td>This function handles withdrawals of Ethereum based tokens from the contract. Does not allow Ether. If token transfer fails, transaction is reverted and remaining gas is refunded.</td>
 </tr>
 </tbody>
-</table><h3 id="example-contract-abi-of-contract-withdraw">Example contract abi of contract withdraw</h3>
+</table><h3 id="command-detail-2">Command Detail</h3>
+<ul>
+<li>withdraw(uint256 amount)</li>
+<li>withdrawToken(address token, uint256 amount)</li>
+</ul>
+<h3 id="example-contract-abi-of-contract-withdraw">Example contract abi of contract withdraw</h3>
 <ul>
 <li>withdrawToken(address, uint256):
 <ul>
@@ -148,12 +165,17 @@
 <td>This function handles deposits of Ether into the contract, but allows specification of a user.</td>
 </tr>
 <tr>
-<td>depositTokenForUser(address,uint256,address)</td>
+<td>depositTokenForUser(address,uint256…)</td>
 <td>3c2e2a75</td>
 <td>This function handles deposits of Ethereum based tokens into the contract, but allows specification of a user. Does not allow Ether. If token transfer fails, transaction is reverted and remaining gas is refunded.</td>
 </tr>
 </tbody>
-</table><h3 id="example-contract-abi-of-contract-transfer">Example contract abi of contract transfer</h3>
+</table><h3 id="command-detail-3">Command Detail</h3>
+<ul>
+<li>depositForUser(address user)</li>
+<li>depositTokenForUser(address token, uint256 amount, address user)</li>
+</ul>
+<h3 id="example-contract-abi-of-contract-transfer">Example contract abi of contract transfer</h3>
 <ul>
 <li>depositTokenForUser(address,uint256,address):
 <ul>
@@ -173,5 +195,56 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-trade">Contract Trade</h2>
+<h2 id="contract-token-fallback">Contract Token Fallback</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenFallback()</td>
+<td>bd23eb39</td>
+<td>This function provides a fallback solution as outlined in ERC223. If tokens are deposited through depositToken(), the transaction will continue. If tokens are sent directly to this contract, the transaction is reverted.</td>
+</tr>
+</tbody>
+</table><h2 id="contract-trade">Contract Trade</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trade(address,uint256…</td>
+<td>0a19b14a</td>
+<td>Facilitates a trade from one user to another. Requires that the transaction is signed properly, the trade isn’t past its expiration, and all funds are present to fill the trade.</td>
+</tr>
+<tr>
+<td>order(address,uint256…</td>
+<td>0b927666</td>
+<td>Store activate order inside of the contract.</td>
+</tr>
+<tr>
+<td>cancelOrder(address,uint256…</td>
+<td>278b8c0e</td>
+<td>This function cancels a given order by editing its fill data to the full amount. Requires that the transaction is signed properly.</td>
+</tr>
+</tbody>
+</table><h3 id="command-detail-4">Command Detail</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="example-contract-abi-of-contract-trade">Example contract abi of contract trade</h3>
+<ul>
+<li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)</li>
+</ul>
 
