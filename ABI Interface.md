@@ -282,7 +282,8 @@
 </ul>
 <h3 id="example-contract-abi-of-contract-trade-buy">Example contract abi of contract trade (Buy)</h3>
 <ul>
-<li>example signature :<pre><code>0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac80388256084f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada1c
+<li>example signature :<pre class=" language-c"><code class="prism ++ language-c"><span class="token comment">//eth.sign(account, msg)</span>
+<span class="token number">0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac80388256084f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada1c</span>
 </code></pre>
 </li>
 <li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
