@@ -37,10 +37,10 @@
 </tbody>
 </table><h3 id="command-detail">Command Detail</h3>
 <ul>
-<li>changeAdmin(address admin_)</li>
-<li>changeFeeAccount(address feeAccount_)</li>
-<li>changeFreeUntilDate(uint256 freeUntilDate_)</li>
-<li>changeFeeTake(uint256 feeTake_)</li>
+<li>changeAdmin(address admin_):</li>
+<li>changeFeeAccount(address feeAccount_):</li>
+<li>changeFreeUntilDate(uint256 freeUntilDate_):</li>
+<li>changeFeeTake(uint256 feeTake_):</li>
 </ul>
 <h3 id="example-contract-abi-of--contract-management">Example contract abi of  contract management</h3>
 <ul>
@@ -83,7 +83,7 @@
 </table><h3 id="command-detail-1">Command Detail</h3>
 <ul>
 <li>deposit()</li>
-<li>depositToken(address token, uint256 amount)</li>
+<li>depositToken(address token, uint256 amount):</li>
 </ul>
 <h3 id="example-contract-abi-of-contract-deposit">Example contract abi of contract deposit</h3>
 <ul>
@@ -127,8 +127,8 @@
 </tbody>
 </table><h3 id="command-detail-2">Command Detail</h3>
 <ul>
-<li>withdraw(uint256 amount)</li>
-<li>withdrawToken(address token, uint256 amount)</li>
+<li>withdraw(uint256 amount):</li>
+<li>withdrawToken(address token, uint256 amount):</li>
 </ul>
 <h3 id="example-contract-abi-of-contract-withdraw">Example contract abi of contract withdraw</h3>
 <ul>
@@ -172,8 +172,8 @@
 </tbody>
 </table><h3 id="command-detail-3">Command Detail</h3>
 <ul>
-<li>depositForUser(address user)</li>
-<li>depositTokenForUser(address token, uint256 amount, address user)</li>
+<li>depositForUser(address user):</li>
+<li>depositTokenForUser(address token, uint256 amount, address user):</li>
 </ul>
 <h3 id="example-contract-abi-of-contract-transfer">Example contract abi of contract transfer</h3>
 <ul>
@@ -241,10 +241,80 @@
 </tbody>
 </table><h3 id="command-detail-4">Command Detail</h3>
 <ul>
-<li></li>
-</ul>
-<h3 id="example-contract-abi-of-contract-trade">Example contract abi of contract trade</h3>
+<li>trade(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s, uint256 amount):
 <ul>
-<li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)</li>
+<li>tokenGet: Ethereum contract address of the token to receive</li>
+<li>amountGet: uint256 amount of tokens being received</li>
+<li>tokenGive: Ethereum contract address of the token to give</li>
+<li>amountGive: uint256 amount of tokens being given</li>
+<li>expires: uint256 of block number when this order should expire</li>
+<li>nonce: arbitrary random number</li>
+<li>user: Ethereum address of the user who placed the order</li>
+<li>v: part of signature for the order hash as signed by user</li>
+<li>r: part of signature for the order hash as signed by user</li>
+<li>s: part of signature for the order hash as signed by user</li>
+<li>amount: uint256 amount in terms of tokenGet that will be “buy” in the trade</li>
 </ul>
+</li>
+<li>order(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce):
+<ul>
+<li>tokenGet: Ethereum contract address of the token to receive</li>
+<li>amountGet: uint256 amount of tokens being received</li>
+<li>tokenGive: Ethereum contract address of the token to give</li>
+<li>amountGive: uint256 amount of tokens being given</li>
+<li>expires: uint256 of block number when this order should expire</li>
+<li>nonce: arbitrary random number</li>
+</ul>
+</li>
+<li>cancelOrder(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, uint8 v, bytes32 r, bytes32 s):
+<ul>
+<li>tokenGet: Ethereum contract address of the token to receive</li>
+<li>amountGet: uint256 amount of tokens being received</li>
+<li>tokenGive: Ethereum contract address of the token to give</li>
+<li>amountGive: uint256 amount of tokens being given</li>
+<li>expires: uint256 of block number when this order should expire</li>
+<li>nonce: arbitrary random number</li>
+<li>v: part of signature for the order hash as signed by user</li>
+<li>r: part of signature for the order hash as signed by user</li>
+<li>s: part of signature for the order hash as signed by user</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-contract-abi-of-contract-trade-buy">Example contract abi of contract trade (Buy)</h3>
+<ul>
+<li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
+<ul>
+<li><code>0a19b14a</code> the Method ID.</li>
+<li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (token contract address of expect to buy padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000100000</code> (buying amount padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000000</code> (paying contract address of zero address is default to ether and padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000010000</code> (paying amount padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000010000000000000</code> (expire block number padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000001</code> (nonce padding to 32 bytes</li>
+<li><code>0x00000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c</code> (address of the user who placed the order padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000028</code> (chain id)</li>
+<li><code>0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac8038825608</code> (signed left hash)</li>
+<li><code>0x4f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada</code> (signed right hash)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000100000</code> (will be buy)</li>
+</ul>
+</li>
+<li>All together, the encoding is (new line after function selector and each 32-bytes of clarity):<pre><code>0a19b14a
+0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a
+0x0000000000000000000000000000000000000000000000000000000000100000
+0x0000000000000000000000000000000000000000000000000000000000000000
+0x0000000000000000000000000000000000000000000000000000000000010000
+0x0000000000000000000000000000000000000000000000000010000000000000
+0x0000000000000000000000000000000000000000000000000000000000000001
+0x00000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c
+0x0000000000000000000000000000000000000000000000000000000000000028
+0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac8038825608
+0x4f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada
+0x0000000000000000000000000000000000000000000000000000000000100000
+</code></pre>
+</li>
+<li>In Total:<pre><code>0x0a19b14a000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a0000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c00000000000000000000000000000000000000000000000000000000000000289242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac80388256084f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada0000000000000000000000000000000000000000000000000000000000100000
+</code></pre>
+</li>
+</ul>
+<h2 id="contract-parse">Contract Parse</h2>
 
