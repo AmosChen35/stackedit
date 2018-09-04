@@ -9,7 +9,7 @@
 <thead>
 <tr>
 <th>Command</th>
-<th>Abi interface</th>
+<th>Abi</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -39,7 +39,7 @@
 <ul>
 <li>changeAdmin(address):
 <ul>
-<li><code>0x8f28397</code> the Method ID. This is derived from the signature <code>changeAdmin(address)</code>.</li>
+<li><code>8f28397</code> the Method ID. This is derived from the signature <code>changeAdmin(address)</code>.</li>
 <li><code>0x000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c</code> (account address padded to 32 bytes)</li>
 </ul>
 </li>
@@ -57,7 +57,7 @@
 <thead>
 <tr>
 <th>Command</th>
-<th>Abi interface</th>
+<th>Abi</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -92,5 +92,86 @@
 </li>
 </ul>
 <h2 id="contract-withdraw">Contract Withdraw</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>withdraw(uint256)</td>
+<td>2e1a7d4d</td>
+<td>This function handles withdrawals of Ether from the contract. Verifies that the user has enough funds to cover the withdrawal.</td>
+</tr>
+<tr>
+<td>withdrawToken(address,uint256)</td>
+<td>9e281a98</td>
+<td>This function handles withdrawals of Ethereum based tokens from the contract. Does not allow Ether. If token transfer fails, transaction is reverted and remaining gas is refunded.</td>
+</tr>
+</tbody>
+</table><h3 id="example-contract-abi-of-contract-withdraw">Example contract abi of contract withdraw</h3>
+<ul>
+<li>withdrawToken(address, uint256):
+<ul>
+<li><code>9e281a98</code> the Method ID.</li>
+<li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (contract address padded to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000100000</code> (number of ethereum based tokens padded to 32 bytes)</li>
+</ul>
+</li>
+<li>All together, the encoding is (newline after function selector and each 32-bytes for clarity):<pre><code>9e281a98
+0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a
+0x0000000000000000000000000000000000000000000000000000000000100000
+</code></pre>
+</li>
+<li>In total:<pre><code>0x9e281a98000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a0000000000000000000000000000000000000000000000000000000000100000
+</code></pre>
+</li>
+</ul>
 <h2 id="contract-transfer">Contract Transfer</h2>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>depositForUser(address)</td>
+<td>6a523c5e</td>
+<td>This function handles deposits of Ether into the contract, but allows specification of a user.</td>
+</tr>
+<tr>
+<td>depositTokenForUser(address,uint256,address)</td>
+<td>3c2e2a75</td>
+<td>This function handles deposits of Ethereum based tokens into the contract, but allows specification of a user. Does not allow Ether. If token transfer fails, transaction is reverted and remaining gas is refunded.</td>
+</tr>
+</tbody>
+</table><h3 id="example-contract-abi-of-contract-transfer">Example contract abi of contract transfer</h3>
+<ul>
+<li>depositTokenForUser(address,uint256,address):
+<ul>
+<li><code>3c2e2a75</code> the Method ID.</li>
+<li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (contract address padded to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000100000</code> (number of ethereum based tokens padded to 32 bytes)</li>
+<li><code>0x000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c</code> (account address padded to 32 bytes)</li>
+</ul>
+</li>
+<li>All together, the encoding is (new line after function selector and each 32-bytes of clarity):<pre><code>3c2e2a75
+0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a
+0x0000000000000000000000000000000000000000000000000000000000100000
+0x000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c
+</code></pre>
+</li>
+<li>In total:<pre><code>0x3c2e2a75000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a0000000000000000000000000000000000000000000000000000000000100000000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c
+</code></pre>
+</li>
+</ul>
+<h2 id="contract-trade">Contract Trade</h2>
 
