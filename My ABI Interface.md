@@ -525,4 +525,9 @@
 </code></pre>
 </li>
 </ul>
+<h1 id="additional">Additional</h1>
+<ul>
+<li><a href="https://emn178.github.io/online-tools/keccak_256.html">Online Hash Tool</a></li>
+<li><a href="http://tomeko.net/online_tools/hex_to_file.php?lang=en">Online Hex To Binary</a></li>
+</ul>
 
