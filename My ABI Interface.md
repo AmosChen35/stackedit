@@ -3,7 +3,34 @@
 
 ---
 
-<h1 id="contract-management">Contract Management</h1>
+<h1 id="contract-terminology">Contract Terminology</h1>
+
+<table>
+<thead>
+<tr>
+<th>Terms</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application binary interface (Abi)</td>
+<td>The standard way to interact with contracts in the Ethereum ecosystem, The first four bytes of the call data for a function call specifies the function to be called. It is the first (left, high-order in big-endian) four bytes of the Keccak256 hash of the signature of the function. The signature is defined as the canonical expression of the basic prototype, i.e. the function name with the parenthesised list of parameter types. Parameter types are split by a single comma - no spaces are used.</td>
+</tr>
+<tr>
+<td>Withdraw</td>
+<td></td>
+</tr>
+<tr>
+<td>FallBack</td>
+<td></td>
+</tr>
+<tr>
+<td>Fund Migration</td>
+<td></td>
+</tr>
+</tbody>
+</table><h1 id="contract-management">Contract Management</h1>
 
 <table>
 <thead>
