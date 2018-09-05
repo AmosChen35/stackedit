@@ -402,7 +402,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="interactive-with-smart-contract-by-json-rpc">Interactive With Smart Contract By JSON-RPC</h2>
+<h2 id="a-simple-interactive-with-smart-contract-by-json-rpc">A Simple Interactive With Smart Contract By JSON-RPC</h2>
 <ul>
 <li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">More information</a></li>
 <li>Use <code>curl</code> as following instruction to send a transaction
@@ -410,7 +410,7 @@
 <li><code>curl -X POST -d @filename.json 127.0.0.1:8545</code></li>
 </ul>
 </li>
-<li>Example JSON parameter detaili - eth_sendTransaction
+<li>eth_sendTransaction - Parameter detaili
 <ul>
 <li><code>from</code>:  <code>DATA</code>, 20 Bytes - The address the transaction is send from.</li>
 <li><code>to</code>:  <code>DATA</code>, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.</li>
@@ -421,8 +421,7 @@
 <li><code>nonce</code>:  <code>QUANTITY</code>  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.</li>
 </ul>
 </li>
-<li>Example JSON - eth_sendTransaction<br>
-Request<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+<li>eth_sendTransaction - Request<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
 <span class="token string">"jsonrpc"</span><span class="token punctuation">:</span> <span class="token string">"2.0"</span><span class="token punctuation">,</span>
 <span class="token string">"method"</span><span class="token punctuation">:</span> <span class="token string">"eth_sendTransaction"</span><span class="token punctuation">,</span>
 <span class="token string">"params"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
@@ -435,9 +434,13 @@ Request<pre class=" language-json"><code class="prism  language-json"><span clas
 <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span>
 <span class="token punctuation">}</span>
 </code></pre>
-Response<br>
-<code>result</code> : <code>DATA</code>, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.<br>
-Use <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_gettransactionreceipt">eth_getTransactionReceipt</a> to get the contract address or transaction detail, after the transaction was mined, when you created a contract.<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+</li>
+<li>eth_sendTransaction - Response
+<ul>
+<li><code>result</code> : <code>DATA</code>, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.</li>
+<li>Use <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_gettransactionreceipt">eth_getTransactionReceipt</a> to get the contract address or transaction detail, after the transaction was mined, when you created a contract.</li>
+</ul>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
 <span class="token string">"id"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
 <span class="token string">"jsonrpc"</span><span class="token punctuation">:</span> <span class="token string">"2.0"</span><span class="token punctuation">,</span>
 <span class="token string">"result"</span><span class="token punctuation">:</span> <span class="token string">"0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"</span>
