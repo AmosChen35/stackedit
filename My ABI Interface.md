@@ -19,15 +19,15 @@
 </tr>
 <tr>
 <td>Withdraw</td>
-<td></td>
+<td>This function is helping user export their token from current contract to the origin contract or account.</td>
 </tr>
 <tr>
 <td>FallBack</td>
-<td></td>
+<td>This is specific function of ERC223 token. If the receiver is a contract ERC223 token contract will try to call <code>tokenFallback</code> function on receiver contract. If there is no <code>tokenFallback</code> function on receiver contract transaction will fail.</td>
 </tr>
 <tr>
 <td>Fund Migration</td>
-<td></td>
+<td>It’s convenient way to help user transfer their tokens from current contract to new contract.</td>
 </tr>
 </tbody>
 </table><h1 id="contract-management">Contract Management</h1>
