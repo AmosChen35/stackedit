@@ -388,7 +388,7 @@
 <ul>
 <li>balanceOf(address,address)
 <ul>
-<li>f7888aec the Method ID.</li>
+<li><code>f7888aec</code> the Method ID.</li>
 <li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (token contract address of expect to buy padding to 32 bytes)</li>
 <li><code>0x000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c</code> (account address padded to 32 bytes)</li>
 </ul>
@@ -399,6 +399,40 @@
 </code></pre>
 </li>
 <li>In Total:<pre><code>0xf7888aec000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c
+</code></pre>
+</li>
+</ul>
+<h2 id="interactive-with-smart-contract-by-json-rpc">Interactive With Smart Contract By JSON-RPC</h2>
+<ul>
+<li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">More information</a></li>
+<li>Use <code>curl</code> as following instruction to send a transaction
+<ul>
+<li><code>curl -X POST -d @filename.json 127.0.0.1:8545</code></li>
+</ul>
+</li>
+<li>Example JSON parameter detaili - eth_sendTransaction
+<ul>
+<li><code>from</code>:  <code>DATA</code>, 20 Bytes - The address the transaction is send from.</li>
+<li><code>to</code>:  <code>DATA</code>, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.</li>
+<li><code>gas</code>:  <code>QUANTITY</code>  - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.</li>
+<li><code>gasPrice</code>:  <code>QUANTITY</code>  - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas</li>
+<li><code>value</code>:  <code>QUANTITY</code>  - (optional) Integer of the value sent with this transaction</li>
+<li><code>data</code>:  <code>DATA</code>  - The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.</li>
+<li><code>nonce</code>:  <code>QUANTITY</code>  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.</li>
+</ul>
+</li>
+<li>Example JSON - eth_sendTransaction<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+<span class="token string">"jsonrpc"</span><span class="token punctuation">:</span> <span class="token string">"2.0"</span><span class="token punctuation">,</span>
+<span class="token string">"method"</span><span class="token punctuation">:</span> <span class="token string">"eth_sendTransaction"</span><span class="token punctuation">,</span>
+<span class="token string">"params"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"0xa7058e40991e255b0af393fbed6476d66706af5a"</span><span class="token punctuation">,</span>
+    <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"0x657e171821adee4d5ba4e401da24e0079c2f268d"</span><span class="token punctuation">,</span>
+    <span class="token string">"gas"</span><span class="token punctuation">:</span> <span class="token string">"0x76c0"</span><span class="token punctuation">,</span> <span class="token comment">// 30400,</span>
+	<span class="token string">"gasPrice"</span><span class="token punctuation">:</span> <span class="token string">"0x9184e72a000"</span><span class="token punctuation">,</span> <span class="token comment">// 10000000000000</span>
+    <span class="token string">"data"</span><span class="token punctuation">:</span> <span class="token string">"0x8f28397000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c"</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
 </code></pre>
 </li>
 </ul>
