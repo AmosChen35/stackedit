@@ -286,7 +286,7 @@
 0x9242685bf161793cc25603c231bc2f568eb630ea16aa137d2664ac80388256084f8ae3bd7535248d0bd448298cc2e2071e56992d0774dc340c368ae950852ada1c
 </code></pre>
 </li>
-<li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
+<li>trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256):
 <ul>
 <li><code>0a19b14a</code> the Method ID.</li>
 <li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (token contract address of expect to buy padding to 32 bytes)</li>
@@ -349,13 +349,13 @@
 </tbody>
 </table><h3 id="command-detail-5">Command Detail</h3>
 <ul>
-<li>balanceOf(address token, address user)
+<li>balanceOf(address token, address user):
 <ul>
 <li>token: Ethereum contract address of the token or 0 for Ether</li>
 <li>user: Ethereum address of the user</li>
 </ul>
 </li>
-<li>availableVolume(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s)
+<li>availableVolume(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s):
 <ul>
 <li>tokenGet: Ethereum contract address of the token to receive</li>
 <li>amountGet: uint256 amount of tokens being received</li>
@@ -369,7 +369,7 @@
 <li>s: part of signature for the order hash as signed by user</li>
 </ul>
 </li>
-<li>amountFilled(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s)
+<li>amountFilled(address tokenGet, uint256 amountGet, address tokenGive, uint256 amountGive, uint256 expires, uint256 nonce, address user, uint8 v, bytes32 r, bytes32 s):
 <ul>
 <li>tokenGet: Ethereum contract address of the token to receive</li>
 <li>amountGet: uint256 amount of tokens being received</li>
@@ -386,7 +386,7 @@
 </ul>
 <h3 id="example-contract-abi-of-contract-amount">Example contract abi of contract amount</h3>
 <ul>
-<li>balanceOf(address,address)
+<li>balanceOf(address,address):
 <ul>
 <li><code>f7888aec</code> the Method ID.</li>
 <li><code>0x000000000000000000000000692a70d2e424a56d2c6c27aa97d1a86395877b3a</code> (token contract address of expect to buy padding to 32 bytes)</li>
@@ -421,13 +421,37 @@
 </tbody>
 </table><h3 id="command-detail-6">Command Detail</h3>
 <ul>
-<li>migrateFunds(address newContract, address[] tokens_)
+<li>migrateFunds(address newContract, address[] tokens_):
 <ul>
-<li></li>
+<li>newContract: Contract address of the new contract we are migrating funds to</li>
+<li>tokens_: Array of token addresses that we will be migrating to the new contract</li>
 </ul>
 </li>
 </ul>
 <h3 id="example-contract-abi-of-contract-fund-migration">Example contract abi of contract fund migration</h3>
+<ul>
+<li>migrateFunds(address,address[]):
+<ul>
+<li><code>515fdde3</code> the Method ID.</li>
+<li><code>0x0000000000000000000000000fdf4894a3b7c5a101686829063be52ad45bcfb7</code>  (new token contract address padding to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000003</code> (this argument it’s starts with the length of the array in elements)</li>
+<li><code>0x0000000000000000000000001439818dd11823c45fff01af0cd6c50934e27ac0</code> (the first entry of the array parameter)</li>
+<li><code>0x0000000000000000000000006431fd0c29d024c5b04c7dab157fccd329e62e55</code> (the second entry of the array parameter)</li>
+<li><code>0x0000000000000000000000001df11fca869524326dad2937ae8398e2296bda71</code> (the third entry of the array parameter)</li>
+</ul>
+</li>
+<li>All together, the encoding is (new line after function selector and each 32-bytes of clarity):<pre><code>515fdde3
+0x0000000000000000000000000fdf4894a3b7c5a101686829063be52ad45bcfb7
+0x0000000000000000000000000000000000000000000000000000000000000003
+0x0000000000000000000000001439818dd11823c45fff01af0cd6c50934e27ac0
+0x0000000000000000000000006431fd0c29d024c5b04c7dab157fccd329e62e55
+0x0000000000000000000000001df11fca869524326dad2937ae8398e2296bda71
+</code></pre>
+</li>
+<li>In Total:<pre><code>0x515fdde30000000000000000000000000fdf4894a3b7c5a101686829063be52ad45bcfb700000000000000000000000000000000000000000000000000000000000000030000000000000000000000001439818dd11823c45fff01af0cd6c50934e27ac00000000000000000000000006431fd0c29d024c5b04c7dab157fccd329e62e550000000000000000000000001df11fca869524326dad2937ae8398e2296bda71
+</code></pre>
+</li>
+</ul>
 <h1 id="a-simple-interactive-with-smart-contract-by-json-rpc">A Simple Interactive With Smart Contract By JSON-RPC</h1>
 <ul>
 <li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">More information</a></li>
