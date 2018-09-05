@@ -3,7 +3,7 @@
 
 ---
 
-<h2 id="contract-management">Contract Management</h2>
+<h1 id="contract-management">Contract Management</h1>
 
 <table>
 <thead>
@@ -58,7 +58,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-deposit">Contract Deposit</h2>
+<h1 id="contract-deposit">Contract Deposit</h1>
 
 <table>
 <thead>
@@ -103,7 +103,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-withdraw">Contract Withdraw</h2>
+<h1 id="contract-withdraw">Contract Withdraw</h1>
 
 <table>
 <thead>
@@ -148,7 +148,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-transfer">Contract Transfer</h2>
+<h1 id="contract-transfer">Contract Transfer</h1>
 
 <table>
 <thead>
@@ -195,7 +195,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-token-fallback">Contract Token Fallback</h2>
+<h1 id="contract-token-fallback">Contract Token Fallback</h1>
 
 <table>
 <thead>
@@ -212,7 +212,7 @@
 <td>This function provides a fallback solution as outlined in ERC223. If tokens are deposited through depositToken(), the transaction will continue. If tokens are sent directly to this contract, the transaction is reverted.</td>
 </tr>
 </tbody>
-</table><h2 id="contract-trade">Contract Trade</h2>
+</table><h1 id="contract-trade">Contract Trade</h1>
 
 <table>
 <thead>
@@ -320,7 +320,7 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="contract-amount">Contract Amount</h2>
+<h1 id="contract-amount">Contract Amount</h1>
 
 <table>
 <thead>
@@ -402,7 +402,33 @@
 </code></pre>
 </li>
 </ul>
-<h2 id="a-simple-interactive-with-smart-contract-by-json-rpc">A Simple Interactive With Smart Contract By JSON-RPC</h2>
+<h1 id="contract-fund-migration">Contract Fund Migration</h1>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abi</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migrateFunds(address,address[])</td>
+<td>515fdde3</td>
+<td>User triggered function to migrate funds into a new contract to ease updates.</td>
+</tr>
+</tbody>
+</table><h3 id="command-detail-6">Command Detail</h3>
+<ul>
+<li>migrateFunds(address newContract, address[] tokens_)
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="example-contract-abi-of-contract-fund-migration">Example contract abi of contract fund migration</h3>
+<h1 id="a-simple-interactive-with-smart-contract-by-json-rpc">A Simple Interactive With Smart Contract By JSON-RPC</h1>
 <ul>
 <li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">More information</a></li>
 <li>Use <code>curl</code> as following instruction to send a transaction
