@@ -479,7 +479,7 @@
 </code></pre>
 </li>
 </ul>
-<h1 id="a-simple-interactive-with-smart-contract-by-json-rpc">A Simple Interactive With Smart Contract By JSON-RPC</h1>
+<h1 id="a-simple-interact-with-smart-contract-by-json-rpc">A Simple Interact With Smart Contract By JSON-RPC</h1>
 <ul>
 <li><a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">More information</a></li>
 <li>Use <code>curl</code> as following instruction to send a transaction
